@@ -9,29 +9,33 @@ package basic
  **/
 
 fun main() {
-    val score = 0
+    var score = 0
     val totalScore =  mutableListOf<Int>()
+    println("")
+    println("-------------------")
     while (true) {
         println("Enter your score number: ${score + 1} or a negative number to brake: ")
-        val input = readlnOrNull() ?: break
-        val takenInput =  input.toInt()
-        if (takenInput == -takenInput || takenInput > 100) {
+        val input = readlnOrNull()?.toIntOrNull() ?: 0
+        if (input == -input || input > 100) {
             break
         }
-        totalScore.add(takenInput)
+        totalScore.add(input)
+        score++
     }
     val highest = totalScore.maxOrNull() ?: 0
     val lowest = totalScore.minOrNull() ?: 0
     val average = totalScore.average()
 
-    when{
-        average >= 86 -> println("A")
-        average >= 79 -> println("B")
-        average >= 60 -> println("C")
-        average >= 49 -> println("D")
-        else -> println("E")
+    val averageGrade = when{
+        average >= 86 -> "A"
+        average >= 79 -> "B"
+        average >= 60 -> "C"
+        average >= 49 -> "D"
+        else -> "E"
     }
 
-    println()
+    println("Your highest score is $highest, ")
+    println("Your lowest score is $lowest, ")
+    println("The average score is $average, grade $averageGrade.")
 }
 
