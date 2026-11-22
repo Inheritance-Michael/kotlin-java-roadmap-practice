@@ -1,37 +1,24 @@
 package oop
 
-import com.sun.tools.javac.tree.TreeInfo.fullName
 
-class FullTime(fullName: String): Employee() {
-    private val salary: Int = 40_000
+class FullTime(override val name: String, private val _salary: Int): Employee() {
 
-    override val name: String
-        get() = TODO()
+    val salary = this._salary
 
     override fun calculatePay(): Int {
         return salary
     }
-
 }
 
-class PartTime(): Employee() {
-    private val hours: Int = 80
-    private val rate: Int = 20
+class PartTime(override val name: String, private val hours: Int, private val rate: Int): Employee() {
 
-    override val name: String
-        get() = TODO()
     override fun calculatePay(): Int{
         return hours * rate
     }
 
 }
 
-class Contractor: Employee() {
-    private val projects: Int = 8
-    private val projectRate: Int = 2000
-
-    override val name: String
-        get() = TODO("Not yet implemented")
+class Contractor(override val name: String, private val projects: Int, private val projectRate: Int): Employee() {
 
     override fun calculatePay(): Int {
         return projects * projectRate
