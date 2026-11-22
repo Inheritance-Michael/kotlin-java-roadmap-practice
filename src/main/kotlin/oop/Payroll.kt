@@ -1,25 +1,40 @@
 package oop
 
-class FullTime: Employee() {
-    private val _salary = calculatePay()
+import com.sun.tools.javac.tree.TreeInfo.fullName
+
+class FullTime(fullName: String): Employee() {
+    private val salary: Int = 40_000
+
+    override val name: String
+        get() = TODO()
+
     override fun calculatePay(): Int {
-        return 12 * 9
+        return salary
     }
-    val salary = _salary
+
 }
 
-class PartTime: Employee() {
-    private val _salary = calculatePay()
-    override fun calculatePay(): Int {
-        return 6 * 4
+class PartTime(): Employee() {
+    private val hours: Int = 80
+    private val rate: Int = 20
+
+    override val name: String
+        get() = TODO()
+    override fun calculatePay(): Int{
+        return hours * rate
     }
-    val salary = _salary
+
 }
 
 class Contractor: Employee() {
-    private val _salary = calculatePay()
+    private val projects: Int = 8
+    private val projectRate: Int = 2000
+
+    override val name: String
+        get() = TODO("Not yet implemented")
+
     override fun calculatePay(): Int {
-        return 4 * 9
+        return projects * projectRate
     }
-    val salary = _salary
+
 }

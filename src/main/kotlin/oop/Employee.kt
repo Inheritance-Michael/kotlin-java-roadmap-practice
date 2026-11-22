@@ -9,6 +9,7 @@ package oop
  * The key thing to notice is that one loop handles all three types without any if checks.
  **/
 abstract class Employee{
+    abstract val name: String
     abstract fun calculatePay(): Int
 }
 
