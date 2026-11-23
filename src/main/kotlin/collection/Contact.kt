@@ -7,11 +7,9 @@ package collection
  * Add a search by name that uses an iterator to remove matches.
  * Tests: List/Set/Map, generics, iterators. Think about why each collection fits its job.
  **/
-data class Numbers(
-    val phone: Int
-)
 
-data class ContactBook(
+
+data class Contact(
     val name: String,
-    val number: Set<Numbers>
+    val number: Long
 )
