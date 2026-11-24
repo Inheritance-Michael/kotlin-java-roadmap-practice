@@ -15,11 +15,11 @@ class Repository<T> {
     fun deleteItem(item: T) {
       items.remove(item)
     }
-    fun findItemNumber(key: Int): Map<Int,T> {
-        return items.associateBy { key }
-    }
-    fun unique(item: T):Set<T>{
-        return items.union(setOf(item))
+//    fun findItemNumber(item: T): Contact{
+//        return Contact[item]
+//    }
+    fun unique():Set<T>{
+        return items.toSet()
     }
 
 }
